@@ -1,0 +1,13 @@
+./node_modules/.bin/sequelize-cli model:generate --name user --attributes username:string,password:string --underscored
+
+./node_modules/.bin/sequelize-cli model:generate --name unit_measurement --attributes name:string,abreviation:string,precision:decimal --underscored
+
+./node_modules/.bin/sequelize-cli model:generate --name ingredient_states --attributes name:string --underscored
+
+./node_modules/.bin/sequelize-cli model:generate --name ingredient_types --attributes name:string --underscored
+
+./node_modules/.bin/sequelize-cli model:generate --name ingredient --attributes name:string,id_unit_measurement:integer,id_ingredient_states:integer,id_ingredient_types:integer --underscored
+
+./node_modules/.bin/sequelize-cli model:generate --name inflows --attributes id_ingredient:integer,reason:enum,price:numeric,qty:numeric,additional_details:text --underscored
+
+./node_modules/.bin/sequelize-cli db:migrate
